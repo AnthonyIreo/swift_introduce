@@ -1,5 +1,7 @@
 # swift.Introduce Self app
 
-- Improve the UI by using different fonts/colors/background
-- Research persistence to learn how to store the information so when app reboots the informatoin remains
-- Add more fields to crease a more thorough introduction
+An app used to generate a self-introduction.
+
+Xcode project with swift.
+Default layout is Iphone 14 pro.
+
