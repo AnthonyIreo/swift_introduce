@@ -9,6 +9,8 @@ import UIKit
 
 class ViewController: UIViewController {
     
+    var number_of_pet = 0
+    
     @IBOutlet weak var FirstNameTextField: UITextField!
     @IBOutlet weak var LastNameTextField: UITextField!
     @IBOutlet weak var SchoolNameTextField: UITextField!
@@ -21,7 +23,15 @@ class ViewController: UIViewController {
     @IBOutlet weak var morePetsStepper: UIStepper!
     
     @IBAction func stepperDidChange(_ sender: UIStepper) {
-          numberOfPetsLabel.text = "\(Int(sender.value))"
+        number_of_pet = Int(sender.value)
+        if number_of_pet == 0{
+            numberOfPetsLabel.text = " I don't have a pet."
+        }else if number_of_pet == 1{
+            numberOfPetsLabel.text = " I have a pet."
+        }else if number_of_pet > 1{
+            numberOfPetsLabel.text = " I have \(number_of_pet) pets."
+        }
+//        numberOfPetsLabel.text = "\(Int(sender.value))"
       }
     @IBAction func introduceSelfDidTapped(_ sender: UIButton) {
             
@@ -30,7 +40,7 @@ class ViewController: UIViewController {
             let year = yearSegmentedControl.titleForSegment(at: yearSegmentedControl.selectedSegmentIndex)
             
             // Creating a constant of type string that holds an introduction. The introduction receives the values from the outlet connections.
-            let introduction = "My name is \(FirstNameTextField.text!) \(LastNameTextField.text!) and I attend \(SchoolNameTextField.text!). I am currently in my \(year!) year and I own \(numberOfPetsLabel.text!) dogs. It is \(morePetsSwitch.isOn) that I want more pets."
+            let introduction = "My name is \(FirstNameTextField.text!) \(LastNameTextField.text!) and I attend \(SchoolNameTextField.text!). I am currently in my \(year!) year and I own \(number_of_pet) pets. It is \(morePetsSwitch.isOn) that I want more pets."
             
             // Creates the alert where we pass in our message, which our introduction.
             let alertController = UIAlertController(title: "My Introduction", message: introduction, preferredStyle: .alert)
