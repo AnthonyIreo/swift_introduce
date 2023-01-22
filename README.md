@@ -3,5 +3,5 @@
 An app used to generate a self-introduction.
 
 Xcode project with swift.
-Default layout is Iphone 14 pro.
+Default layout is Iphone 13 pro.
 
